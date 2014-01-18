@@ -201,6 +201,9 @@ typedef struct gralloc_module_t {
     int (*perform)(struct gralloc_module_t const* module,
             int operation, ... );
 
+    int (*getPhyAddress)(struct gralloc_module_t const* module, buffer_handle_t handle,
+					   void** auiPhyAddr);
+					   
     /* reserved for future use */
     void* reserved_proc[7];
 } gralloc_module_t;

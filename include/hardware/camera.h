@@ -248,6 +248,12 @@ typedef struct camera_device_ops {
      */
     int (*set_parameters)(struct camera_device *, const char *parms);
 
+	/**
+     * Set the file descriptor to HAL for writing file ih the HAL by fuqiang.
+     * This is added for android 4.2.
+     */
+	int (*set_fd)(struct camera_device *, int fd);
+
     /** Retrieve the camera parameters.  The buffer returned by the camera HAL
         must be returned back to it with put_parameters, if put_parameters
         is not NULL.
